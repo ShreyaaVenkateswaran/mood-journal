@@ -4,7 +4,7 @@ A full-stack mood journaling application that allows users to log and visualize 
 
 ---
 
-## 📌 Features
+### Features
 
 - Add, view, update, and delete daily mood entries
 - Display moods and notes in a monthly calendar view
@@ -13,7 +13,7 @@ A full-stack mood journaling application that allows users to log and visualize 
 
 ---
 
-## 🚀 API Endpoints & Their Functionality
+### API Endpoints & Their Functionality
 
 | Method | Endpoint             | Description                           |
 |--------|----------------------|---------------------------------------|
@@ -22,7 +22,7 @@ A full-stack mood journaling application that allows users to log and visualize 
 | PUT    | `/entries/<int:id>`  | Update an existing mood entry by ID   |
 | DELETE | `/entries/<int:id>`  | Delete a mood entry by ID             |
 
-### ✅ Sample Request/Response
+### Sample Request/Response
 
 #### `POST /entries`
 
@@ -49,14 +49,14 @@ A full-stack mood journaling application that allows users to log and visualize 
   }
 ]
 
-## 🗃️ Database Used
+### Database Used
 
 - **Database**: MySQL  
 - **Integration**: SQLAlchemy (ORM) using `pymysql` driver
 
 ---
 
-### 📄 Sample Schema
+### Sample Schema
 
 CREATE TABLE journal_entry (
   id INT PRIMARY KEY AUTO_INCREMENT,
@@ -70,19 +70,19 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:yourpassword@local
 db = SQLAlchemy(app)
 
 ### How to Run the Server
-# Prerequisites
+#### Prerequisites
 Python 3.8+
 MySQL Server (e.g., XAMPP, WAMP, or standalone)
 
-# Install dependencies:
+#### Install dependencies:
 pip install Flask Flask-SQLAlchemy flask-cors pymysql
 
-# Setup MySQL
+#### Setup MySQL
 Create a database:
 CREATE DATABASE moodjournal;
 Update your app.py with your MySQL credentials.
 
-# Start the Flask Server
+#### Start the Flask Server
 From the root project directory, run:
 python backend/app.py
 
@@ -95,24 +95,24 @@ The frontend (index.html) is served automatically by Flask.
 Open your browser and visit:
 http://localhost:5000
 
-# You can:
+#### You can:
 Add a new mood entry
 View entries for each day in a calendar
 Edit or delete existing entries
 
 ### How to Interact with the API
-# Add an Entry
+#### Add an Entry
 curl -X POST http://localhost:5000/entries \
   -H "Content-Type: application/json" \
   -d '{"date":"2025-06-20","mood":"Relaxed","note":"Watched a movie"}'
   
-# Get All Entries
+#### Get All Entries
 curl http://localhost:5000/entries
 
-# Update an Entry
+#### Update an Entry
 curl -X PUT http://localhost:5000/entries/1 \
   -H "Content-Type: application/json" \
   -d '{"date":"2025-06-20","mood":"Excited","note":"Updated note"}'
   
-# Delete an Entry
+#### Delete an Entry
 curl -X DELETE http://localhost:5000/entries/1
