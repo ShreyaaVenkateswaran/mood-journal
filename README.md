@@ -38,7 +38,7 @@ A full-stack mood journaling application that allows users to log and visualize 
   "message": "Entry added successfully"
 }
 
-#### 'GET /entries'
+#### `GET /entries`
 *Response*
 [
   {
@@ -74,15 +74,15 @@ db = SQLAlchemy(app)
 Python 3.8+
 MySQL Server (e.g., XAMPP, WAMP, or standalone)
 
-#### Install dependencies:
+#### 1) Install dependencies:
 pip install Flask Flask-SQLAlchemy flask-cors pymysql
 
-#### Setup MySQL
+#### 2) Setup MySQL
 Create a database:
 CREATE DATABASE moodjournal;
 Update your app.py with your MySQL credentials.
 
-#### Start the Flask Server
+#### 3) Start the Flask Server
 From the root project directory, run:
 python backend/app.py
 
@@ -101,18 +101,26 @@ View entries for each day in a calendar
 Edit or delete existing entries
 
 ### How to Interact with the API
-#### Add an Entry
+#### 1) Add an Entry
 curl -X POST http://localhost:5000/entries \
   -H "Content-Type: application/json" \
   -d '{"date":"2025-06-20","mood":"Relaxed","note":"Watched a movie"}'
   
-#### Get All Entries
+#### 2) Get All Entries
 curl http://localhost:5000/entries
 
-#### Update an Entry
+#### 3) Update an Entry
 curl -X PUT http://localhost:5000/entries/1 \
   -H "Content-Type: application/json" \
   -d '{"date":"2025-06-20","mood":"Excited","note":"Updated note"}'
   
-#### Delete an Entry
+#### 4) Delete an Entry
 curl -X DELETE http://localhost:5000/entries/1
+
+## Contributing 
+Contributions are welcome! Please follow the standard contribution guidelines and adhere to the code of conduct.
+
+## Acknowledgements
+- Flask: for providing a lightweight and flexible backend framework.
+- SQLAlchemy: for powerful ORM-based database integration.
+- MySQL: for the reliable and robust database engine.
