@@ -38,7 +38,7 @@ A full-stack mood journaling application that allows users to log and visualize 
   "message": "Entry added successfully"
 }
 
-**GET /entries**
+#### 'GET /entries'
 *Response*
 [
   {
