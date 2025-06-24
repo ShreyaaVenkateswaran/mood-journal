@@ -117,6 +117,29 @@ curl -X PUT http://localhost:5000/entries/1 \
 #### 4) Delete an Entry
 curl -X DELETE http://localhost:5000/entries/1
 
+### Tests for Mood Journal API
+
+This folder contains all **unit, integration, and API tests** for the Mood Journal backend built with Flask and SQLAlchemy.
+
+---
+
+### Test Types
+
+| File                | Type             | Description |
+|---------------------|------------------|-------------|
+| `test_unit.py`      | Unit Tests       | Tests model logic without DB interaction |
+| `test_integration.py` | Integration Tests | Tests DB interactions (CRUD) with `JournalEntry` |
+| `test_api.py`       | API Tests        | Tests HTTP API endpoints like `GET`, `POST`, `PUT`, `DELETE` |
+| `conftest.py`       | Fixtures         | Provides shared test setup, including the Flask test client |
+
+---
+
+### How to Run Tests
+
+Make sure you're in the root project directory (`mood-journal-project`) and run:
+
+pytest --cov=backend --cov-report=term-missing
+
 ## Contributing 
 Contributions are welcome! Please follow the standard contribution guidelines and adhere to the code of conduct.
 
